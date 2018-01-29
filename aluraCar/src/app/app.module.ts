@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { EscolhaPage } from '../pages/escolha/escolha';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -13,7 +14,8 @@ import 'rxjs/add/operator/toPromise';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPage
   ],
   imports: [
     BrowserModule, 
@@ -23,7 +25,8 @@ import 'rxjs/add/operator/toPromise';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPage
   ],
   providers: [
     StatusBar,

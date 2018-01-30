@@ -11,6 +11,18 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
 import { AgendamentoService } from '../domain/agendamento/agendamento-service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { Storage } from '@ionic/storage';
+import { StorageConfig } from '@ionic/storage';
+import { AgendamentoDao } from '../domain/agendamento/agendamento-dao';
+
+function provideStorage() {
+  
+  return new Storage({
+    driverOrder: ['indexeddb'],
+    name: 'aluracar',
+    storeName: 'agendamentos'
+  });
+} 
 
 @NgModule({
   declarations: [
@@ -34,8 +46,10 @@ import 'rxjs/add/operator/toPromise';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AgendamentoService
+    AgendamentoService,
+    AgendamentoDao,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: Storage, useFactory: provideStorage }
   ]
 })
 export class AppModule {}

@@ -13,7 +13,7 @@ export class AgendamentoService {
 
     agendar(agendamento: Agendamento) {
         
-        return this._dao.ehAgendamentoDuplicado(agendamento)
+        return this._dao.verificaAgendamentoDuplicado(agendamento)
             .then(existe => {
                 if(existe) 
                     throw new Error ('Agendamento já existente!');

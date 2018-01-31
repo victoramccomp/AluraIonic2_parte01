@@ -20,7 +20,7 @@ export class AgendamentoDao {
         return this._storage.set(key, agendamento);
     }
 
-    ehAgendamentoDuplicado(agendamento: Agendamento) {
+    verificaAgendamentoDuplicado(agendamento: Agendamento) {
         
         let key = this._getKey(agendamento);
 
